@@ -1,7 +1,7 @@
 var mineflayer = require('mineflayer');
 const keep_alive = require('./keep_alive.js')
 
-var host = "libercraft.net";
+var host = "hypixel.net";
 var port = 25565;
 var username = "bla@example.com"
 var password = "1r0nf@rmp@rty"
