@@ -1,2 +1,2 @@
-# 24-7-ploudos
+# Minecraft bot
 yes
