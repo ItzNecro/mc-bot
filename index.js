@@ -5,7 +5,6 @@ const sleep = require("sleep");
 let host = "cavrynet.work";
 let port = 25565;
 let username = "niger@hitamnig.ga";
-let password = "n1g3r14"; // only for premium accs
 let version = "1.18.2";
 
 // code start
@@ -95,7 +94,6 @@ bot.on("end", function() {
     host: host,
     port: port,
     username: username,
-    // password: password,
     version: version
   });
   console.log("reconnected.");
