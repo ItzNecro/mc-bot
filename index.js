@@ -5,7 +5,7 @@ const sleep = require("sleep");
 let host = "cavrynet.work";
 let port = 25565;
 let username = "niger@hitamnig.ga";
-let password = "n1g3r14";
+let password = "n1g3r14"; // only for premium accs
 let version = "1.18.2";
 
 // code start
@@ -51,17 +51,17 @@ bot.on("time", function() {
     lasttime = bot.time.age;
     console.log("Age set to " + lasttime);
   } else {
-    var randomadd = Math.random() * maxrandom * 20;
-    var interval = moveinterval * 20 + randomadd;
+    let randomadd = Math.random() * maxrandom * 20;
+    let interval = moveinterval * 20 + randomadd;
     if (bot.time.age - lasttime > interval) {
-      if (moving == 1) {
+      if (moving === 1) {
         bot.setControlState(lastaction, false);
         moving = 0;
         console.log("Stopped moving after " + interval / 20 + " seconds");
         lasttime = bot.time.age;
       } else {
-        var yaw = Math.random() * pi - 0.5 * pi;
-        var pitch = Math.random() * pi - 0.5 * pi;
+        let yaw = Math.random() * pi - 0.5 * pi;
+        let pitch = Math.random() * pi - 0.5 * pi;
         bot.look(yaw, pitch, false);
         console.log(
           "Changed looking direction to yaw " + yaw + " and pitch " + pitch
@@ -91,10 +91,11 @@ bot.on("end", function() {
   lasttime = -1;
   moving = 0;
   connected = 0;
-  bot = mineflayer.createBot({
+  const bot = mineflayer.createBot({
     host: host,
     port: port,
     username: username,
+    // password: password,
     version: version
   });
   console.log("reconnected.");
