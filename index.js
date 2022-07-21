@@ -1,33 +1,35 @@
-var mineflayer = require("mineflayer");
+const mineflayer = require("mineflayer");
 const keep_alive = require("./keep_alive.js");
+const sleep = require("sleep");
 
-var host = "libercraft.net";
-var port = 25565;
-var username = "bla@example.com";
-var password = "1r0nf@rmp@rty";
-var moveinterval = 2; // 2 second movement interval
-var maxrandom = 5; // 0-5 seconds added to movement interval (randomly)
+let host = "cavrynet.work";
+let port = 25565;
+let username = "niger@hitamnig.ga";
+let password = "n1g3r14";
+let version = "1.18.2";
 
 // code start
-var bot = mineflayer.createBot({
-  host: "red.ploudos.com",
-  port: 12172,
-  username: "Police",
-  version: "1.16.5"
+const bot = mineflayer.createBot({
+  host: host,
+  port: port,
+  username: username,
+  version: version
 });
 
-var lasttime = -1;
-var moving = 0;
-var connected = 0;
-var actions = ["forward", "back", "left", "right"];
-var lastaction;
-var pi = 3.14159;
+let moveinterval = 2; // 2 second movement interval
+let maxrandom = 5; // 0-5 seconds added to movement interval (randomly)
+let lasttime = -1;
+let moving = 0;
+let connected = 0;
+let actions = ["forward", "back", "left", "right"];
+let lastaction;
+let pi = 3.14159;
 
-var sleep = require("sleep");
-
+/* ww
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
+*/
 
 bot.on("chat", function(username, message) {
   if (username === bot.username) return;
@@ -90,10 +92,10 @@ bot.on("end", function() {
   moving = 0;
   connected = 0;
   bot = mineflayer.createBot({
-    host: "red.ploudos.com",
-    port: 12172,
-    username: "NotABot",
-    version: "1.16.5"
+    host: host,
+    port: port,
+    username: username,
+    version: version
   });
   console.log("reconnected.");
 });
